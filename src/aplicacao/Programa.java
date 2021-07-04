@@ -24,7 +24,11 @@ public class Programa {
 	List<Vendedor> list = vendedorDao.findByDepartamento(departamento);
 	for (Vendedor obj : list) {
 		System.out.println(obj);
-	}
-	
+		}
+	System.out.println("/n=== Teste 3: Vendedor findAll =====");
+	list = vendedorDao.findAll();
+	for (Vendedor obj : list) {
+		System.out.println(obj);
+		}
 	}
 }
