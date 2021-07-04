@@ -2,6 +2,7 @@ package aplicacao;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import entidade.negocio.Departamento;
 import entidade.negocio.Vendedor;
@@ -12,7 +13,8 @@ public class Programa {
 	
 	public static void main(String[] args) {
 	
-	
+	Scanner sc = new Scanner(System.in);
+		
 	VendedorDao vendedorDao = FabricaDao.createVendedorDao();
 	
 	System.out.println("=== Teste 1: Vendedor finById =====");
@@ -42,6 +44,14 @@ public class Programa {
 	vendedor.setEmail("martha@gmail.com");
 	vendedorDao.update(vendedor);
 	System.out.println("Atualização Completa! ");
-			
+	
+	System.out.println("/n=== Teste 6: Vendedor delete =====");
+	System.out.println("Entre com ID para deletar");
+	int id = sc.nextInt();
+	vendedorDao.deleteById(id);
+	System.out.println("Delete completo");
+	
+	sc.close();
+	
 	}
 }
