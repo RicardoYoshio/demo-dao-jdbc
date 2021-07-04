@@ -1,5 +1,6 @@
 package aplicacao;
 
+import java.util.Date;
 import java.util.List;
 
 import entidade.negocio.Departamento;
@@ -30,5 +31,10 @@ public class Programa {
 	for (Vendedor obj : list) {
 		System.out.println(obj);
 		}
+	System.out.println("/n=== Teste 4: Vendedor inset =====");
+	Vendedor newVendedor = new Vendedor(null, "Greg", "greg@gmail.com", new Date(), 4000.0, departamento);
+	vendedorDao.insert(newVendedor);
+	System.out.println("Inserted! Nem id = " + newVendedor.getId());
+	
 	}
 }
